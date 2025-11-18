@@ -1,0 +1,5 @@
+{
+  "name": "Datacenter Work Permit System",
+  "description": "An application for managing datacenter access requests (Work Permits) for both internal and external personnel, including equipment tracking.",
+  "requestFramePermissions": []
+}
