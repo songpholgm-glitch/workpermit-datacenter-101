@@ -5,7 +5,7 @@ export enum PersonType {
 }
 
 export interface Personnel {
-  id: string; // Frontend temporary ID or Database ID
+  id: string;
   type: PersonType;
   employeeId: string;
   fullName: string;
@@ -22,7 +22,6 @@ export interface WorkPermitRequest {
 }
 
 export interface SubmittedWorkPermitData extends WorkPermitRequest {
-  id?: string; // Supabase UUID
   documentId: string;
   submissionTimestamp: Date;
 }

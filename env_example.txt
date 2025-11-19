@@ -1,2 +1,5 @@
-VITE_SUPABASE_URL
-VITE_SUPABASE_ANON_KEY
+
+# ปัจจุบันแอปพลิเคชันนี้ยังไม่มีการใช้ Environment Variables
+# หากมีการเชื่อมต่อกับ API ภายนอกในอนาคต ให้เพิ่ม Key ที่นี่
+# ตัวอย่าง:
+# VITE_API_BASE_URL
