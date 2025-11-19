@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import WorkPermitForm from './components/WorkPermitForm';
 import SummaryPage from './components/SummaryPage';
@@ -57,7 +56,8 @@ const App: React.FC = () => {
       }
     } catch (error) {
       console.error("Error fetching work permits:", error);
-      alert("ไม่สามารถดึงข้อมูลจากฐานข้อมูลได้");
+      // Don't alert on initial load error to avoid spamming if config is missing
+      // Just log it. The user will see empty state or can try again.
     } finally {
       setIsLoading(false);
     }

@@ -11,13 +11,15 @@ interface ViteImportMeta {
 }
 
 // Initialize the Supabase client
-// These environment variables must be set in your .env file
 const meta = import.meta as unknown as ViteImportMeta;
-const supabaseUrl = meta.env.VITE_SUPABASE_URL || '';
-const supabaseAnonKey = meta.env.VITE_SUPABASE_ANON_KEY || '';
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.warn('Supabase URL or Anon Key is missing. Please check your .env file.');
+// Use fallback values to prevent app crash during initialization if env vars are missing
+// This allows the UI to render even if the backend connection fails later
+const supabaseUrl = meta.env.VITE_SUPABASE_URL || 'https://placeholder.supabase.co';
+const supabaseAnonKey = meta.env.VITE_SUPABASE_ANON_KEY || 'placeholder-key';
+
+if (!meta.env.VITE_SUPABASE_URL || !meta.env.VITE_SUPABASE_ANON_KEY) {
+  console.warn('Supabase URL or Anon Key is missing. Please check your Vercel Project Settings (Environment Variables).');
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
