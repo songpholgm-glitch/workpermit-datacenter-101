@@ -4,7 +4,7 @@ import WorkPermitForm from './components/WorkPermitForm';
 import SummaryPage from './components/SummaryPage';
 import DashboardPage from './components/DashboardPage';
 import PermitDetailModal from './components/PermitDetailModal';
-import type { SubmittedWorkPermitData, WorkPermitRequest, Personnel } from './types';
+import type { SubmittedWorkPermitData, WorkPermitRequest } from './types';
 import { supabase } from './lib/supabaseClient';
 import { PersonType } from './types';
 
@@ -100,7 +100,7 @@ const App: React.FC = () => {
             reason: data.reason,
             entry_date_time: data.entryDateTime,
             equipment_in: data.equipmentIn,
-            equipmentOut: data.equipmentOut,
+            equipment_out: data.equipmentOut,
             // submission_timestamp usually stays same, or update a separate 'updated_at'
           })
           .eq('id', editingPermit.id);
